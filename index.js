@@ -15,11 +15,26 @@ class SortedList {
     this.items.push(item);
   }
 
-  get(pos) {}
+  get(pos) {
+    if (pos >= this.items.length) {
+      throw new Error('OutOfBounds');
+    }
+    return this.items[pos];
+  }
 
-  max() {}
+  max() {
+    if (this.items.length === 0) {
+      throw new Error('EmptySortedList');
+    }
+    return this.items[this.items.length - 1];
+  }
 
-  min() {}
+  min() {
+    if (this.items.length === 0) {
+      throw new Error('EmptySortedList');
+    }
+    return this.items[0];
+  }
 
   sum() {}
 
